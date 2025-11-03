@@ -15,10 +15,9 @@
     }
     #space-bg { position: fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:none; }
 
-    /* ASTROLOGY + ZODIAC EFFECTS */
     .astrology-bg { position: fixed; top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events: none; }
     .zodiac { position: absolute; font-size:60px; opacity:.13; animation: float 9s infinite alternate; }
-    .zodiac1{ top:5%; left:4%; color:#f9d371;}
+    .zodiac1{ top:7%; left:6%; color:#f9d371;}
     .zodiac2{ top:15%; right:7%; color:#a2e3f6;}
     .zodiac3{ top:51%; left:8%; color:#b7a7f2;}
     .zodiac4{ bottom:14%; right:6%; color:#ffb6b9;}
@@ -28,7 +27,6 @@
     .zodiac8{ top:44%; left:13%; color:#a2e3f6;}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(38px)}}
 
-    /* Animated constellation SVGs */
     .constellation { position: absolute; width: 190px; height: 190px; opacity: 0.10; filter: blur(0.7px); }
     .constellation1{ top: 12%; left: 11%; }
     .constellation2{ top: 18%; right: 7%; }
@@ -38,94 +36,46 @@
     .constellation line { stroke: #06b6d4; stroke-width:1.2; opacity:.24; animation: twinkle 2.5s infinite; }
     @keyframes twinkle{50%{opacity:.44;}}
 
-    /* Ring Orbits for extra effect */
-    .orbit { position:absolute; border-radius:50%; border:1.5px solid rgba(6,182,212,0.15);}
-    .orbit1 { width:260px;height:260px;top:47%;left:51%; transform:translate(-50%,-50%); animation: rotate 22s linear infinite; }
-    .orbit2 { width:420px;height:420px;top:49%;left:49%; transform:translate(-50%,-50%); animation: rotate 34s linear infinite reverse;}
+    .orbit { position:absolute; border-radius:50%; border:1.5px solid rgba(6,182,212,0.11);}
+    .orbit1 { width:230px;height:230px;top:50%;left:52%; transform:translate(-50%,-50%); animation: rotate 23s linear infinite; }
+    .orbit2 { width:390px;height:390px;top:53%;left:46%; transform:translate(-50%,-50%); animation: rotate 34s linear infinite reverse;}
     @keyframes rotate{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);} }
 
-    /* CARD UI */
     .container {min-height:100vh;display:flex;align-items:center;justify-content:center;z-index:2;}
     .card {
-      position:relative;
-      max-width:540px;
-      width:94vw;
-      background:rgba(12,23,38,0.6);
-      border-radius:22px;
+      position:relative; max-width:540px; width:94vw;
+      background:rgba(18,23,38,0.7); border-radius:22px;
       padding:48px 38px 40px 38px;
       box-shadow:0 0px 58px #00f7c440,0 0px 15px #314fcd22;
       border: 3px solid #06b6d4;
-      text-align: center;
-      overflow: visible;
-      z-index:3;
+      text-align: center; overflow: visible; z-index:3;
     }
-    .card:before { content:"";position:absolute;top:-24px;left:-24px;right:-24px;bottom:-24px;
-      border-radius:32px;pointer-events:none;z-index:0;
-      border: 2px solid #14ffacad; opacity: 0.18; }
-    .card-header {
-      margin-bottom: 8px;
-    }
-    .scanner-label { font-size: 11px; color: #06b6d4; letter-spacing: 3px; text-transform: uppercase;
-      margin-bottom: 5px; text-shadow:0 0 8px #06b6d4cc;}
-    h1 { font-size: 31px; margin-bottom: 7px; color: #00ff88; letter-spacing: 2px;
-      text-shadow:0px 0px 24px #0ffad6,0px 1px 18px #0ffad6;}
+    .card-header { margin-bottom: 8px;}
+    .scanner-label { font-size: 11px; color: #06b6d4; letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 5px; text-shadow: 0 0 8px #06b6d4cc;}
+    h1 { font-size:29px; margin-bottom:8px; color: #00ff88; letter-spacing:2px; text-shadow:0 0 18px #0ffad6;}
     .subtitle { font-size:12px; color:#93eaf7; letter-spacing:2px;text-transform:uppercase;opacity:0.77;}
-
     #message { font-size:15px; margin-bottom:25px; color:#b0ffcc; font-weight: 500; }
-
-    #startBtn {
-      padding: 17px 51px;
-      font-size: 15px;
-      border-radius: 9px;
-      border: none;
-      background: linear-gradient(90deg,#16a34a,#06b6d4);
-      color:#ffffff; font-weight:bold; letter-spacing:1.2px; cursor: pointer;
-      margin-bottom: 19px;
-      box-shadow:0 0 11px #09f45877;
-      transition: box-shadow .18s, background .18s;
-      display:inline-block;
-      outline:none;
-    }
+    #startBtn { padding: 17px 51px; font-size:15px; border-radius:9px; border:none; background:linear-gradient(90deg,#16a34a,#06b6d4); color:#ffffff;font-weight:bold;letter-spacing:1.2px; cursor: pointer; margin-bottom:19px; box-shadow:0 0 11px #09f45877; transition: box-shadow .18s, background .18s; display:inline-block; outline:none;}
     #startBtn:hover{box-shadow:0 0 18px #00ff88aa;background:linear-gradient(90deg,#34d28d,#00ff88);}
     #startBtn:disabled{opacity:0.6;cursor: not-allowed;}
-
     #status { font-size:14px; min-height:30px;color:#06b6d4;text-align:center;letter-spacing:.7px;font-weight:500;}
     .bar {width:100%;height:10px;background:rgba(6,182,212,0.14);border-radius:9px;overflow:hidden;margin-top:22px;display:none;}
-    .bar > div {height:100%;width:0%;
-      background: linear-gradient(90deg,#16a34a,#06b6d4);
-      transition: width 100ms linear;
-      box-shadow:0 0 8px #06b6d4a6, 0 0 3px #16a34a77;
-    }
-
-    /* HAND UI */
-    .hand-container { margin: 33px auto; width: 325px; height: 400px; display:none;justify-content:center;align-items:center;position:relative; }
-    .scanner-frame { position:absolute; width:350px; height:415px; border:2px solid #06b6d4; border-radius:17px; display:none;
-      animation:frameGlow 1.8s infinite;}
+    .bar > div {height:100%;width:0%;background: linear-gradient(90deg,#16a34a,#06b6d4);transition: width 100ms linear;box-shadow:0 0 8px #06b6d4a6, 0 0 3px #16a34a77;}
+    .hand-container { margin: 33px auto;width:325px;height:400px;display:none;justify-content:center;align-items:center;position:relative;}
+    .scanner-frame { position:absolute;width:350px;height:415px;border:2px solid #06b6d4;border-radius:17px;display:none;animation:frameGlow 1.8s infinite;}
     @keyframes frameGlow{0%,100%{box-shadow:0 0 16px #06b6d433;}50%{box-shadow:0 0 32px #14ffe6cc;}}
-
     .hand-svg { width:100%; height:100%; display:block; filter: drop-shadow(0 0 31px #12ffab77) drop-shadow(0 0 27px #06b6d455);}
-    /* Realistic "fingers" use gradients and inner lines */
-    .finger-shadow { filter:url(#handshadow);}
-    .scan-line {
-      stroke: url(#scanGradient); stroke-width: 11; stroke-linecap: round; opacity: 0.95;
-      animation: scanLine 2.5s linear infinite;
-      filter: drop-shadow(0 0 7px #06b6d4);
-    }
-    @keyframes scanLine{0%{transform:translateY(-40px);}100%{transform:translateY(320px);}}
-
-    /* Sensor spots */
+    .scan-line {stroke: url(#scanGradient); stroke-width: 11; stroke-linecap: round; opacity: 0.95; animation: scanLine 2.5s linear infinite; filter: drop-shadow(0 0 7px #06b6d4);}
+    @keyframes scanLine { 0% { transform:translateY(-40px);}100%{ transform:translateY(320px);}}
     .sensor-spot {animation: sensorGlow 2.6s infinite alternate;}
     @keyframes sensorGlow{0%,100%{opacity:.65;filter:drop-shadow(0px 0px 7px #00ff88b7);}50%{opacity:1;filter:drop-shadow(0px 0px 16px #00ff88e7);}}
-
-    /* Tech stats */
     .tech-info {margin-top:23px;display:flex;justify-content:space-around;font-size:12px;color:#84e6ca;}
     .tech-item{ text-align:center;}
     .tech-label{ font-size:9px; text-transform:uppercase; letter-spacing:1px; opacity:0.8;}
     .tech-value{ font-size:14px; color:#00ff88; font-weight:bold; text-shadow:0 0 15px #00ff88a0;}
     .tech-value.animated { animation: valueGlow 1.8s infinite alternate;}
     @keyframes valueGlow{0%,100%{color:#1ee6c2;}50%{color:#00ff88;}}
-
-    /* Modal (video popup) */
     .modal-overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.96);display:flex;justify-content:center;align-items:center;z-index:1000;animation:fadeIn .3s;}
     .modal {background:rgba(10,20,38,.97);border:2.5px solid #06b6d4;border-radius:17px;padding:40px;text-align:center;position:relative;max-width:96%;box-shadow:0 0 60px #00f7c4cc,inset 0 0 25px #06b6d469;}
     @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
@@ -134,42 +84,24 @@
     .modal iframe{width:100%;max-width:540px;height:330px;border-radius:10px; border:2px solid #06b6d4;margin:20px 0;background:#000;box-shadow:0 0 20px #06b6d4;}
     .close-btn{position:absolute;top:14px;right:19px;font-size:33px;color:#06b6d4;border:none;background:none;cursor:pointer;transition:all .2s;}
     .close-btn:hover{color:#16a34a;transform:scale(1.3)rotate(90deg);}
-    /* Modal rings for astrology touch */
     .modal-orbit{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%); border-radius:50%;border:2px solid #14ffe6a6;}
     .modal-orbit.one{width:350px;height:350px;}
     .modal-orbit.two{width:230px;height:230px;border-color:#ffd700;}
     .modal-orbit.three{width:120px;height:120px;border-color:#b7a7f2;}
-
-    @media (max-width: 480px) {
-      .card{padding:25px;}
-      .hand-container{width:180px;height:230px;}
-      .scanner-frame{width:190px;height:240px;}
-      .modal{padding:18px;}
-      .modal iframe{height:182px;}
-    }
+    @media (max-width: 480px) {.card{padding:25px;}.hand-container{width:180px;height:230px;}.scanner-frame{width:190px;height:240px;}.modal{padding:18px;}.modal iframe{height:182px;}}
   </style>
 </head>
 <body>
   <canvas id="space-bg"></canvas>
   <div class="astrology-bg">
-    <div class="zodiac zodiac1">♈</div><div class="zodiac zodiac2">♉</div>
-    <div class="zodiac zodiac3">♊</div><div class="zodiac zodiac4">♋</div>
-    <div class="zodiac zodiac5">♌</div><div class="zodiac zodiac6">♍</div>
+    <div class="zodiac zodiac1">♈</div><div class="zodiac zodiac2">♉</div><div class="zodiac zodiac3">♊</div>
+    <div class="zodiac zodiac4">♋</div><div class="zodiac zodiac5">♌</div><div class="zodiac zodiac6">♍</div>
     <div class="zodiac zodiac7">♎</div><div class="zodiac zodiac8">♏</div>
-    <div class="orbit orbit1"></div>
-    <div class="orbit orbit2"></div>
-    <svg class="constellation constellation1" viewBox="0 0 190 190">
-      <line x1="20" y1="28" x2="70" y2="46"/><line x1="70" y1="46" x2="138" y2="37"/><line x1="138" y1="37" x2="172" y2="94"/><circle cx="20" cy="28" r="4"/><circle cx="70" cy="46" r="4"/><circle cx="138" cy="37" r="4"/><circle cx="172" cy="94" r="4"/>
-    </svg>
-    <svg class="constellation constellation2" viewBox="0 0 190 190">
-      <line x1="33" y1="170" x2="101" y2="121"/><line x1="101" y1="121" x2="135" y2="55"/><circle cx="33" cy="170" r="4"/><circle cx="101" cy="121" r="4"/><circle cx="135" cy="55" r="4"/>
-    </svg>
-    <svg class="constellation constellation3" viewBox="0 0 190 190">
-      <line x1="67" y1="36" x2="155" y2="44"/><line x1="155" y1="44" x2="172" y2="122"/><circle cx="67" cy="36" r="4"/><circle cx="155" cy="44" r="4"/><circle cx="172" cy="122" r="4"/>
-    </svg>
-    <svg class="constellation constellation4" viewBox="0 0 190 190">
-      <line x1="49" y1="90" x2="133" y2="140"/><circle cx="49" cy="90" r="4"/><circle cx="133" cy="140" r="4"/>
-    </svg>
+    <div class="orbit orbit1"></div><div class="orbit orbit2"></div>
+    <svg class="constellation constellation1" viewBox="0 0 190 190"><line x1="20" y1="28" x2="70" y2="46"/><line x1="70" y1="46" x2="138" y2="37"/><line x1="138" y1="37" x2="172" y2="94"/><circle cx="20" cy="28" r="4"/><circle cx="70" cy="46" r="4"/><circle cx="138" cy="37" r="4"/><circle cx="172" cy="94" r="4"/></svg>
+    <svg class="constellation constellation2" viewBox="0 0 190 190"><line x1="33" y1="170" x2="101" y2="121"/><line x1="101" y1="121" x2="135" y2="55"/><circle cx="33" cy="170" r="4"/><circle cx="101" cy="121" r="4"/><circle cx="135" cy="55" r="4"/></svg>
+    <svg class="constellation constellation3" viewBox="0 0 190 190"><line x1="67" y1="36" x2="155" y2="44"/><line x1="155" y1="44" x2="172" y2="122"/><circle cx="67" cy="36" r="4"/><circle cx="155" cy="44" r="4"/><circle cx="172" cy="122" r="4"/></svg>
+    <svg class="constellation constellation4" viewBox="0 0 190 190"><line x1="49" y1="90" x2="133" y2="140"/><circle cx="49" cy="90" r="4"/><circle cx="133" cy="140" r="4"/></svg>
   </div>
   <div class="container">
     <div class="card">
@@ -193,26 +125,20 @@
             <filter id="handshadow"><feGaussianBlur stdDeviation="8" /></filter>
             <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
-          <!-- Palm: realistic with thumb arc -->
-          <path d="M140 330 Q170 382 210 330 L230 110 Q245 60 225 65 L225 330 Q170 390 110 330 Q90 70 130 110 L130 330 Z"
-                fill="#156c47" filter="url(#handshadow)" stroke="#09ffaa" stroke-width="3"/>
-          <!-- Fingers: gradient overlay for realistic shading -->
+          <path d="M140 330 Q170 382 210 330 L230 110 Q245 60 225 65 L225 330 Q170 390 110 330 Q90 70 130 110 L130 330 Z" fill="#156c47" filter="url(#handshadow)" stroke="#09ffaa" stroke-width="3"/>
           <rect x="115" y="40" width="30" height="115" rx="20" fill="#1ea26c" stroke="#09ffaa" stroke-width="3"/>
           <rect x="135" y="17" width="38" height="122" rx="22" fill="#19b07e" stroke="#09ffaa" stroke-width="3"/>
           <rect x="168" y="10" width="36" height="125" rx="19" fill="#16d48a" stroke="#0cf" stroke-width="2"/>
           <rect x="198" y="24" width="33" height="138" rx="20" fill="#19b07e" stroke="#09ffaa" stroke-width="3"/>
           <rect x="225" y="55" width="26" height="120" rx="14" fill="#1ea26c" stroke="#09ffaa" stroke-width="3"/>
-          <!-- Palm lines for realism -->
           <path d="M140 210 Q170 220 175 300" stroke="#45e6d4" stroke-width="8" opacity="0.9"/>
           <path d="M170 170 Q172 185 187 193" stroke="#30f8b1" stroke-width="4" opacity="0.8"/>
           <path d="M210 145 Q187 181 195 193" stroke="#30f8b1" stroke-width="4" opacity="0.8"/>
-          <!-- Sensor spots (animated) -->
           <circle class="sensor-spot" cx="190" cy="180" r="7" fill="#00ff88"/>
           <circle class="sensor-spot" cx="160" cy="110" r="6" fill="#06b6d4"/>
           <circle class="sensor-spot" cx="213" cy="132" r="5.8" fill="#ffd700"/>
           <circle class="sensor-spot" cx="135" cy="230" r="7" fill="#00ff88"/>
           <circle class="sensor-spot" cx="190" cy="260" r="7" fill="#ffd700"/>
-          <!-- Scanning line -->
           <line id="scanLine" class="scan-line" x1="120" y1="50" x2="230" y2="50"/>
         </svg>
       </div>
@@ -285,7 +211,6 @@
     function showVideo() {
       const randomVideo = videos[Math.floor(Math.random()*videos.length)];
       const overlay=document.createElement('div'); overlay.className='modal-overlay';
-      // Modal orbits (for astrology effect)
       const orbit1=document.createElement('div');orbit1.className='modal-orbit one';
       const orbit2=document.createElement('div');orbit2.className='modal-orbit two';
       const orbit3=document.createElement('div');orbit3.className='modal-orbit three';
